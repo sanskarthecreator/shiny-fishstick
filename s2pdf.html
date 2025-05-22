@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap2PDF - Image to PDF Converter</title>
+    <link rel="stylesheet" href="s2pdf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Snap2PDF</h1>
+            <p>Effortlessly convert your images into a single PDF document.</p>
+        </header>
+
+        <div class="drop-area" id="dropArea">
+            <p>Drag & Drop Images Here or Click to Upload</p>
+            <input type="file" id="fileInput" accept="image/*" multiple hidden>
+        </div>
+
+        <div class="preview" id="imagePreview">
+            </div>
+
+        <p class="edit-note">Click on an image in the preview to crop or rotate it.</p>
+
+        <div class="options">
+            <label for="landscape">
+                <input type="checkbox" id="landscape"> Landscape Orientation
+            </label>
+            <label for="grayscale">
+                <input type="checkbox" id="grayscale"> Convert to Grayscale
+            </label>
+        </div>
+
+        <button class="convert-btn" id="convertBtn" disabled>Generate PDF</button>
+    </div>
+
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <h2>Edit Image</h2>
+            <img src="" id="editImage" alt="Image for Editing">
+            <div class="edit-controls">
+                <button id="rotateLeft">Rotate Left</button>
+                <button id="rotateRight">Rotate Right</button>
+                <button id="crop">Apply Crop</button>
+                <button id="saveEdit">Save Changes</button>
+                <button id="cancelEdit">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="s2pdf.js"></script>
+</body>
+</html>
